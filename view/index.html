@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                <meta content="IE=edge" http-equiv="X-UA-Compatible">
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" rel="stylesheet">
+                        <link href="../style/css/bootstrap.css" rel="stylesheet">
+                            <script src="../Controller/llamadaApi.js">
+                            </script>
+                        </link>
+                    </link>
+                </meta>
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <div class="col-3">
+        </div>
+        <div class="container col-xl-6">
+            <div class="row">
+                <div class="col margin-left">
+                    <div class="row">
+                        <h1 class="center-block" id="currentTemp">
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 col-sm-3 col-md-3 col-lg-3 col-xl-2">
+                            <p class="lightBlue" id="geoCity">
+                            </p>
+                        </div>
+                        <div class="col-3 col-sm-1 col-md-1 col-lg-1">
+                            <p id="slash">
+                                |
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="grey" id="geoZone">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>
+                            Hoy
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 col-md-2 col-lg-1">
+                            <p id="tempMax">
+                            </p>
+                        </div>
+                        <div class="col-2 col-md-2">
+                            <p class="grey" id="tempMin">
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p id="humedad">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col iconGrande">
+                	<i class="bi" id="icon0"></i>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <!-- dia 1 -->
+                <div class="col-3">
+                    <div class="row">
+                    	<i class="bi" id="icon1"></i>
+                    </div>
+                    <div class="row">
+                        <p class="lightBlue margin-bottom" id="dia+1">
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p id="tempMaxDia+1">
+                            </p>
+                        </div>
+                        <div class="col-2">
+                            <p class="grey" id="tempMinDia+1">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- dia 2 -->
+                <div class="col-3">
+                    <div class="row">
+                    	<i class="bi" id="icon2"></i>
+                    </div>
+                    <div class="row">
+                        <p class="lightBlue margin-bottom" id="dia+2">
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p id="tempMaxDia+2">
+                            </p>
+                        </div>
+                        <div class="col-2">
+                            <p class="grey" id="tempMinDia+2">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- dia 3-->
+                <div class="col-3">
+                    <div class="row">
+                    	<i class="bi" id="icon3"></i>
+                    </div>
+                    <div class="row">
+                        <p class="lightBlue margin-bottom" id="dia+3">
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p id="tempMaxDia+3">
+                            </p>
+                        </div>
+                        <div class="col-2">
+                            <p class="grey" id="tempMinDia+3">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+        </div>
+        <div onload="navigator.geolocation.watchPosition(geo_success, geo_error, geo_options);">
+        </div>
+    </body>
+</html>
