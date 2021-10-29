@@ -63,4 +63,4 @@ var geo_options = {
 //**************************
 //         MAIN
 //**************************
-navigator.geolocation.watchPosition(geo_success, geo_error, geo_options);
+window.onload = navigator.geolocation.watchPosition(geo_success, geo_error, geo_options);
