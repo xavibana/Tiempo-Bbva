@@ -23,48 +23,28 @@ function current(data) {
 }
 
 function recuperarIcons(data) {
-    var responseApi;
-    var rain = 'bi-cloud-rain';
-    var clouds = 'bi-clouds';
-    var fewClouds = 'bi-cloud-sun';
-    var clear = 'bi-sun img-fluid';
-    var thunderstorm = 'bi-cloud-lightning-rain';
-    var snow = 'bi-cloud-snow';
-    var err = 'bi-question-diamond';
+    var responseApi, iView;
+    var wetherVals = {
+        Rain: 'bi-cloud-rain',
+        Clouds: 'bi-clouds',
+        Drizzle: 'bi-cloud-sun',
+        Clear: 'bi-sun img-fluid',
+        Thunderstorm: 'bi-cloud-lightning-rain',
+        Snow: 'bi-cloud-snow'
+    };
     for (var i = 0; i < 4; i++) {
+        iView = document.getElementById('icon' + i);
         responseApi = data['daily'][i]['weather'][0]['main'];
-        if (responseApi == 'Rain') {
-            document.getElementById('icon' + i).classList.add(rain);
-        } else if (responseApi == 'Clouds') {
-            document.getElementById('icon' + i).classList.add(clouds);
-        } else if (responseApi == 'Drizzle') {
-            document.getElementById('icon' + i).classList.add(fewClouds);
-        } else if (responseApi == 'Clear') {
-            document.getElementById('icon' + i).classList.add(clear);
-        } else if (responseApi == 'Thunderstorm') {
-            document.getElementById('icon' + i).classList.add(thunderstorm);
-        } else if (responseApi == 'Snow') {
-            document.getElementById('icon' + i).classList.add(snow);
-        } else {
-            document.getElementById('icon' + i).classList.add(err);
-        }
+        iView.classList.add(wetherVals[responseApi]);
     }
 }
 
 function forecast(data) {
     var dia = new Date();
-    const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', ];
+    const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo', 'Lunes', 'Martes'];
     //Se empieza en 1 para seleccionar desde el dia siguiente
     for (var i = 1; i < 4; i++) {
-        if (dia.getDay() + i == 7) {
-            document.getElementById('dia+' + i).innerHTML = days[0];
-        } else if (dia.getDay() + i == 8) {
-            document.getElementById('dia+' + i).innerHTML = days[1];
-        } else if (dia.getDay() + i == 9) {
-            document.getElementById('dia+' + i).innerHTML = days[2];
-        } else {
-            document.getElementById('dia+' + i).innerHTML = days[dia.getDay() + i];
-        }
+        document.getElementById('dia+' + i).innerHTML = days[dia.getDay() + i];
         document.getElementById('tempMaxDia+' + i).innerHTML = Math.round(data['daily'][i]['temp']['max']) + "°";
         document.getElementById('tempMinDia+' + i).innerHTML = Math.round(data['daily'][i]['temp']['min']) + "°";
     }
