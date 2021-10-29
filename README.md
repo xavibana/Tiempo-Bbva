@@ -32,7 +32,7 @@ http://localhost/TiempoBbva/view/
 6) Para que la aplicación pueda recojer la ubicación debe aceptar los permisos de ubicación en su navegador.
 
 
-<img width="1042" alt="tiempo-bbva" src="https://github.com/xavibana/Tiempo-Bbva/blob/main/view/tiempoBbva.PNG">
+<img width="1042" alt="tiempo-bbva" src="https://github.com/xavibana/Tiempo-Bbva/blob/main/src/images/tiempoBbva.PNG">
 
 ## En caso de encontrar algún error o tener alguna sugerencia puede hacerlo en:
 ``
