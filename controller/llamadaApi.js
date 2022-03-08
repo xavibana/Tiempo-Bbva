@@ -3,12 +3,14 @@ function geo_success(position) {
     var lat = 'lat=' + position.coords.latitude;
     var long = '&lon=' + position.coords.longitude;
     var exclu = '&exclude=minutely,hourly';
-    var apiKey = '&units=metric&appid=1b7a9ad11a8b3dda8a62a94aea1830b8';
+    var apiKey = '&units=metric&appid=032ce5e220d604b633f702f740d7239c';
     var apiCall = apiUrl + lat + long + exclu + apiKey;
-    fetch(apiCall).then(response => response.json()).then(data => {
-        current(data);
-        forecast(data);
-        recuperarIcons(data);
+    fetch(apiCall)
+        .then(response => response.json())
+        .then(data => {
+            current(data);
+            forecast(data);
+            recuperarIcons(data);
     });
 }
 
